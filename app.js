@@ -16,7 +16,10 @@ console.log(`convertToSeconds(10) === 600 : ${convertToSeconds(10) === 600}`);
 // 2. areaOfTriangle
 // Write a function called areaOfTriangle that takes in the base and height
 // of a triangle and returns its area
-function areaOfTriangle() {}
+function areaOfTriangle(base, height) {
+    const area = (1 / 2) * base * height;
+    return area;
+}
 console.log(`areaOfTriangle(5, 10) === 25 : ${areaOfTriangle(5, 10) === 25}`);
 
 // 3. lessThan100
@@ -37,11 +40,12 @@ console.log(`lessThan100(100, 10) === false : ${lessThan100(100, 10) === false}`
 // that accepts a first_name and last_name as required parameters
 // and a third parameter called middle_name which is optional.
 // The function should return a string with the first, middle and last names
-function getFormattedName(first_name, last_name, middle_name) {
-    if (middle_name === '') {
-        return first_name + ' ' + last_name;
+function getFormattedName(first, last, middle) {
+    if (!middle) {
+        return first + ' ' + last;
     } else {
-        return first_name + ' ' + middle_name + ' ' + last_name;
+        const fullName = first + ' ' + middle + ' ' + last;
+        return fullName;
     }
 }
 
@@ -69,7 +73,7 @@ console.log(
 function daysInMonth(month) {
     if (month === 2) {
         return 29;
-    } else if (month === (4 || 6 || 9)) {
+    } else if (month === 4 || month === 6 || month === 9 || month === 11) {
         return 30;
     } else return 31;
 }
